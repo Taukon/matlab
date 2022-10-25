@@ -1,0 +1,10 @@
+load carbig
+
+Cylinders = categorical(Cylinders);
+Model_Year = categorical(Model_Year);
+Origin = categorical(Origin);
+
+X = table(Cylinders, displacement, Horsepower, Weight, Acceleration, Model_Year, Origin);
+
+t = templateTree('NumVariablesToSample', 'all', ...
+    'PredictorSelection', 'interaction-curvature'
